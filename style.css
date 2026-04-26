@@ -1,0 +1,248 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+    transition:0.3s;
+
+    /* مهم: تعويض النافبار */
+    padding-top: 80px;
+}
+
+/* =========================
+   Navbar (مُصلّح 100%)
+========================= */
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(17,24,39,0.9); /* 🔥 تصحيح الخطأ */
+    backdrop-filter: blur(10px);    /* 🔥 بدون مسافة غلط */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* القائمة */
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    align-items:center;
+}
+
+/* الروابط */
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    padding:6px 10px;
+    border-radius:6px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+/* =========================
+   Hero
+========================= */
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:15px;
+}
+
+/* صورة مخفية عندك */
+.profile{
+    display:none;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn{
+    padding:10px 15px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+/* =========================
+   Sections
+========================= */
+section{
+    padding:70px 20px;
+    text-align:center;
+}
+
+/* =========================
+   SERVICES (ثابت)
+========================= */
+#services{
+    background:#1e293b;
+    padding:90px 20px;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.card{
+    background:#111827;
+    padding:25px;
+    border-radius:15px;
+    width:220px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+    transition:0.3s;
+
+    opacity:1 !important;
+    transform:none !important;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    background:#1f2937;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+.projects{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.project{
+    width:250px;
+    position:relative;
+    cursor:pointer;
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+}
+
+.project img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.project:hover img{
+    transform:scale(1.05);
+}
+
+/* =========================
+   Lightbox
+========================= */
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:10px;
+}
+
+/* =========================
+   Form
+========================= */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:300px;
+    margin:auto;
+}
+
+input,textarea{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+/* =========================
+   Top button
+========================= */
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:10px;
+    display:none;
+}
+
+/* =========================
+   Reveal
+========================= */
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:0.5s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   Mobile
+========================= */
+.menu-toggle{
+    display:none;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        right:0;
+        top:60px;
+        background:#111827;
+        padding:20px;
+        border-radius:10px;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+}
