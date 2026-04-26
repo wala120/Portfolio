@@ -51,3 +51,22 @@ const nav=document.querySelector(".nav-links");
 menu.onclick=()=>{
 nav.classList.toggle("active");
 };
+/* =========================
+   ANIMATION ON SCROLL
+========================= */
+
+const animatedItems = document.querySelectorAll(".card, .project");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+animatedItems.forEach(item => {
+    observer.observe(item);
+});
